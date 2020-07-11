@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My New Hugo Site</title>
+    <link>https://mike-just.github.io/post/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Jul 2020 00:00:31 +0800</lastBuildDate>
+    
+	<atom:link href="https://mike-just.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blog</title>
+      <link>https://mike-just.github.io/post/blog/</link>
+      <pubDate>Sun, 12 Jul 2020 00:00:31 +0800</pubDate>
+      
+      <guid>https://mike-just.github.io/post/blog/</guid>
+      <description>@@Autowired注解：
+先按照类型去容器中找到对应的组件 @Autowired private BookDao bookDao;
+ 找到就直接赋值 没找到就报错 先按照类型来找。。。。 找到多个类型一样的呢？按照变量名(bookDao)作为id继续匹配 那如果变量名有一样的呢？报错。可以使用@Qualifier(&amp;quot;haha&amp;quot;)指定一个字符串作为新的id 那如果@Qualifier也找不到呢？@Autowired(required=false)表示找不到就自动装配null  如果@Autowired作用在方法上呢？ @Controller public class BookServlet { //1.这个方法也会在bean创建的时候自动运行 //2.这个方法的每一个参数都会自动注入值 @Autowired public void haha(BookDao dao,BookService bookService){ System.out.println(&amp;ldquo;Spring运行了这个方法。。。&amp;ldquo;+dao+bookService); }
+总结：@Autowired 、@Resource、@Inject;都是自动装配的意思 @Autowired :最强大：Spring的注解 @Resource：默认byname java的标准
+@Resource的扩展性强，如果我们切换成另外一个容器框架，@Resource还是可以使用的，@Autowired就不行了 </description>
+    </item>
+    
+  </channel>
+</rss>
