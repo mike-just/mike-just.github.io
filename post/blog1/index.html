@@ -12,7 +12,7 @@
     
 
     
-    <title>Blog</title>
+    <title>Blog1</title>
 
     
     
@@ -22,22 +22,22 @@
   
   
   <meta name="author" content="" />
-  <meta name="description" content="@@Autowired注解：
-先按照类型去容器中找到对应的组件 @Autowired private BookDao bookDao;
- 找到就直接赋值 没找到就报错 先按照类型来找。。。。 找到多个类型一样的呢？按照变量名(bookDao)作为id继续匹配 那如果变量名有一样的呢？报错。可以使用@Qualifier(&amp;quot;haha&amp;quot;)指定一个字符串作为新的id 那如果@Qualifier也找不到呢？@Autowired(required=false)表示找不到就自动装配null  如果@Autowired作用在方法上呢？ @Controller public class BookServlet { //1.这个方法也会在bean创建的时候自动运行 //2.这个方法的每一个参数都会自动注入值 @Autowired public void haha(BookDao dao,BookService bookService){ System.out.println(&amp;ldquo;Spring运行了这个方法。。。&amp;ldquo;&#43;dao&#43;bookService); }
-总结：@Autowired 、@Resource、@Inject;都是自动装配的意思 @Autowired :最强大：Spring的注解 @Resource：默认byname java的标准
-@Resource的扩展性强，如果我们切换成另外一个容器框架，@Resource还是可以使用的，@Autowired就不行了 ">
+  <meta name="description" content="Spring&amp;mdash;-AOP(面向切面编程)&amp;mdash;声明式事务&amp;mdash;-Spring-JDBCTemplate Spring&amp;mdash;-IOC(容器)&amp;mdash;&amp;ndash;整合mybais等框架的
+IOC：(Inversion(反转) of . Control) ：控制反转 控制资源的获取方式: 主动式：(要什么资源都自己创建即可) BookServlet{ BookServlet bs=new BookServlet(); AirPlane ap=new AirPlane();//复杂对象的创建是比较困难的 } 被动式：(资源的获取不是我们创建，交给容器来创建) BookServlet{ BookService bs; public void test01(){ bs.checkout(); } } 容器：管理所有的组件(有功能的类)；假设，BookServlet受容器管理，BookService也受容器管理，容器可以自动的探查出哪些组件(类) 需要用到另一些组件(类)；容器帮我们创建BookService对象，并把BookService赋值进去
+DI：(Dependency Injection)依赖注入 容器能知道哪个组件(类)运行的时候，需要另外一个类(组件)，容器通过反射的形式，将容器中准备好的BookService对象注入(利用反射 给属性赋值)到BookServlet中；
+只要是容器管理的组件，都能使用容器提供的强大功能
+HelloWord;（通过各种方式给容器中注册对象(注册会员)） 以前是自己new对象，现在所有的对象交给容器创建;给容器中注册组件">
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="Blog" />
-    <meta name="twitter:description" content="@@Autowired注解：
-先按照类型去容器中找到对应的组件 @Autowired private BookDao bookDao;
- 找到就直接赋值 没找到就报错 先按照类型来找。。。。 找到多个类型一样的呢？按照变量名(bookDao)作为id继续匹配 那如果变量名有一样的呢？报错。可以使用@Qualifier(&amp;quot;haha&amp;quot;)指定一个字符串作为新的id 那如果@Qualifier也找不到呢？@Autowired(required=false)表示找不到就自动装配null  如果@Autowired作用在方法上呢？ @Controller public class BookServlet { //1.这个方法也会在bean创建的时候自动运行 //2.这个方法的每一个参数都会自动注入值 @Autowired public void haha(BookDao dao,BookService bookService){ System.out.println(&amp;ldquo;Spring运行了这个方法。。。&amp;ldquo;&#43;dao&#43;bookService); }
-总结：@Autowired 、@Resource、@Inject;都是自动装配的意思 @Autowired :最强大：Spring的注解 @Resource：默认byname java的标准
-@Resource的扩展性强，如果我们切换成另外一个容器框架，@Resource还是可以使用的，@Autowired就不行了 " />
+    <meta name="twitter:title" content="Blog1" />
+    <meta name="twitter:description" content="Spring&amp;mdash;-AOP(面向切面编程)&amp;mdash;声明式事务&amp;mdash;-Spring-JDBCTemplate Spring&amp;mdash;-IOC(容器)&amp;mdash;&amp;ndash;整合mybais等框架的
+IOC：(Inversion(反转) of . Control) ：控制反转 控制资源的获取方式: 主动式：(要什么资源都自己创建即可) BookServlet{ BookServlet bs=new BookServlet(); AirPlane ap=new AirPlane();//复杂对象的创建是比较困难的 } 被动式：(资源的获取不是我们创建，交给容器来创建) BookServlet{ BookService bs; public void test01(){ bs.checkout(); } } 容器：管理所有的组件(有功能的类)；假设，BookServlet受容器管理，BookService也受容器管理，容器可以自动的探查出哪些组件(类) 需要用到另一些组件(类)；容器帮我们创建BookService对象，并把BookService赋值进去
+DI：(Dependency Injection)依赖注入 容器能知道哪个组件(类)运行的时候，需要另外一个类(组件)，容器通过反射的形式，将容器中准备好的BookService对象注入(利用反射 给属性赋值)到BookServlet中；
+只要是容器管理的组件，都能使用容器提供的强大功能
+HelloWord;（通过各种方式给容器中注册对象(注册会员)） 以前是自己new对象，现在所有的对象交给容器创建;给容器中注册组件" />
     <meta name="twitter:image" content="https://mike-just.github.io/img/avatar.jpg" />
   
 
@@ -47,7 +47,7 @@
 <meta name="generator" content="Hugo 0.73.0" />
 
 
-<link rel="canonical" href="https://mike-just.github.io/post/blog/">
+<link rel="canonical" href="https://mike-just.github.io/post/blog1/">
 <link rel="alternative" href="/index.xml" title="顾沉舟的个人博客" type="application/atom+xml">
 
 
@@ -213,43 +213,24 @@
     
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Blog</h1>
+      <h1 class="post-title">Blog1</h1>
       <p class="entry-meta"><span class="entry-time">Jul 12, 2020</span> 1 min read</p>
     </header>
     
 
-    <article class="post-content"><p>@@Autowired注解：</p>
-<p>先按照类型去容器中找到对应的组件
-@Autowired
-private BookDao bookDao;</p>
-<pre><code>     找到就直接赋值
-     没找到就报错
-     先按照类型来找。。。。
-     找到多个类型一样的呢？按照变量名(bookDao)作为id继续匹配
-     那如果变量名有一样的呢？报错。可以使用@Qualifier(&quot;haha&quot;)指定一个字符串作为新的id
-     那如果@Qualifier也找不到呢？@Autowired(required=false)表示找不到就自动装配null
-</code></pre>
-<p>如果@Autowired作用在方法上呢？
-@Controller
-public class BookServlet {
-//1.这个方法也会在bean创建的时候自动运行
-//2.这个方法的每一个参数都会自动注入值
-@Autowired
-public  void haha(BookDao dao,BookService bookService){
-System.out.println(&ldquo;Spring运行了这个方法。。。&ldquo;+dao+bookService);
-}</p>
-<p>总结：@Autowired  、@Resource、@Inject;都是自动装配的意思
-@Autowired :最强大：Spring的注解
-@Resource：默认byname  java的标准</p>
-<h2 id="resource的扩展性强如果我们切换成另外一个容器框架resource还是可以使用的autowired就不行了">@Resource的扩展性强，如果我们切换成另外一个容器框架，@Resource还是可以使用的，@Autowired就不行了</h2>
+    <article class="post-content"><p>Spring&mdash;-AOP(面向切面编程)&mdash;声明式事务&mdash;-Spring-JDBCTemplate Spring&mdash;-IOC(容器)&mdash;&ndash;整合mybais等框架的</p>
+<p>IOC：(Inversion(反转) of . Control) ：控制反转 控制资源的获取方式: 主动式：(要什么资源都自己创建即可) BookServlet{ BookServlet bs=new BookServlet(); AirPlane ap=new AirPlane();//复杂对象的创建是比较困难的 } 被动式：(资源的获取不是我们创建，交给容器来创建) BookServlet{ BookService bs; public void test01(){ bs.checkout(); } } 容器：管理所有的组件(有功能的类)；假设，BookServlet受容器管理，BookService也受容器管理，容器可以自动的探查出哪些组件(类) 需要用到另一些组件(类)；容器帮我们创建BookService对象，并把BookService赋值进去</p>
+<p>DI：(Dependency Injection)依赖注入 容器能知道哪个组件(类)运行的时候，需要另外一个类(组件)，容器通过反射的形式，将容器中准备好的BookService对象注入(利用反射 给属性赋值)到BookServlet中；</p>
+<p>只要是容器管理的组件，都能使用容器提供的强大功能</p>
+<p>HelloWord;（通过各种方式给容器中注册对象(注册会员)） 以前是自己new对象，现在所有的对象交给容器创建;给容器中注册组件</p>
 </article>
     <footer class="post-footer">
       
       <div class="sharing">
-        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fmike-just.github.io%2fpost%2fblog%2f" title="Share on Facebook">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fmike-just.github.io%2fpost%2fblog1%2f" title="Share on Facebook">
           <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
         </a>
-        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Blog&amp;url=https%3a%2f%2fmike-just.github.io%2fpost%2fblog%2f" title="Share on Twitter">
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Blog1&amp;url=https%3a%2f%2fmike-just.github.io%2fpost%2fblog1%2f" title="Share on Twitter">
           <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
         </a>
       </div>
