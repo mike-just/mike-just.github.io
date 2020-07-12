@@ -12,7 +12,7 @@
     
 
     
-    <title>Blog1</title>
+    <title>AOP简单描述</title>
 
     
     
@@ -22,22 +22,22 @@
   
   
   <meta name="author" content="" />
-  <meta name="description" content="Spring&amp;mdash;-AOP(面向切面编程)&amp;mdash;声明式事务&amp;mdash;-Spring-JDBCTemplate Spring&amp;mdash;-IOC(容器)&amp;mdash;&amp;ndash;整合mybais等框架的
-IOC：(Inversion(反转) of . Control) ：控制反转 控制资源的获取方式: 主动式：(要什么资源都自己创建即可) BookServlet{ BookServlet bs=new BookServlet(); AirPlane ap=new AirPlane();//复杂对象的创建是比较困难的 } 被动式：(资源的获取不是我们创建，交给容器来创建) BookServlet{ BookService bs; public void test01(){ bs.checkout(); } } 容器：管理所有的组件(有功能的类)；假设，BookServlet受容器管理，BookService也受容器管理，容器可以自动的探查出哪些组件(类) 需要用到另一些组件(类)；容器帮我们创建BookService对象，并把BookService赋值进去
-DI：(Dependency Injection)依赖注入 容器能知道哪个组件(类)运行的时候，需要另外一个类(组件)，容器通过反射的形式，将容器中准备好的BookService对象注入(利用反射 给属性赋值)到BookServlet中；
-只要是容器管理的组件，都能使用容器提供的强大功能
-HelloWord;（通过各种方式给容器中注册对象(注册会员)） 以前是自己new对象，现在所有的对象交给容器创建;给容器中注册组件">
+  <meta name="description" content="面向切面编程：基于OOP基础之上新的编程思想 指在程序运行期间，将某段代码动态切入到指定方法的指定位置进行运行的这种编程方式，面向切面编程
+场景：计算器运行计算方法的时候进行日志记录 加日志记录： 1.直接编写在方法内部；不推荐，修改维护麻烦 日志记录：系统的辅助功能 业务逻辑：（核心功能） 耦合；
+2.我们希望的是 业务逻辑:（核心功能）；日志模块；在核心功能运行期间，自己动态的加上 运行的时候，日志功能可以加上 可以使用动态代理来将日志代码动态的在目标方法执行前后先进行执行;
+动态代理： 1.写起来难 2.jdk默认的动态代理，如果目标对象没有实现任何接口，是无法为它创建代理对象的 总结： 将某段代码（日志）动态切入（不把日志代码写死在业务逻辑方法中）到指定方法（加减乘除）的指定位置（方法的开始，结束，异常）进行运行的这种编程方式
+Spring动态代理：Spring实现AOP功能，底层就是动态代理 总结：可以利用Spring一句代码都不写的去创建动态代理 实现简单，没有强制要求目标对象必须实现接口 ">
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="Blog1" />
-    <meta name="twitter:description" content="Spring&amp;mdash;-AOP(面向切面编程)&amp;mdash;声明式事务&amp;mdash;-Spring-JDBCTemplate Spring&amp;mdash;-IOC(容器)&amp;mdash;&amp;ndash;整合mybais等框架的
-IOC：(Inversion(反转) of . Control) ：控制反转 控制资源的获取方式: 主动式：(要什么资源都自己创建即可) BookServlet{ BookServlet bs=new BookServlet(); AirPlane ap=new AirPlane();//复杂对象的创建是比较困难的 } 被动式：(资源的获取不是我们创建，交给容器来创建) BookServlet{ BookService bs; public void test01(){ bs.checkout(); } } 容器：管理所有的组件(有功能的类)；假设，BookServlet受容器管理，BookService也受容器管理，容器可以自动的探查出哪些组件(类) 需要用到另一些组件(类)；容器帮我们创建BookService对象，并把BookService赋值进去
-DI：(Dependency Injection)依赖注入 容器能知道哪个组件(类)运行的时候，需要另外一个类(组件)，容器通过反射的形式，将容器中准备好的BookService对象注入(利用反射 给属性赋值)到BookServlet中；
-只要是容器管理的组件，都能使用容器提供的强大功能
-HelloWord;（通过各种方式给容器中注册对象(注册会员)） 以前是自己new对象，现在所有的对象交给容器创建;给容器中注册组件" />
+    <meta name="twitter:title" content="AOP简单描述" />
+    <meta name="twitter:description" content="面向切面编程：基于OOP基础之上新的编程思想 指在程序运行期间，将某段代码动态切入到指定方法的指定位置进行运行的这种编程方式，面向切面编程
+场景：计算器运行计算方法的时候进行日志记录 加日志记录： 1.直接编写在方法内部；不推荐，修改维护麻烦 日志记录：系统的辅助功能 业务逻辑：（核心功能） 耦合；
+2.我们希望的是 业务逻辑:（核心功能）；日志模块；在核心功能运行期间，自己动态的加上 运行的时候，日志功能可以加上 可以使用动态代理来将日志代码动态的在目标方法执行前后先进行执行;
+动态代理： 1.写起来难 2.jdk默认的动态代理，如果目标对象没有实现任何接口，是无法为它创建代理对象的 总结： 将某段代码（日志）动态切入（不把日志代码写死在业务逻辑方法中）到指定方法（加减乘除）的指定位置（方法的开始，结束，异常）进行运行的这种编程方式
+Spring动态代理：Spring实现AOP功能，底层就是动态代理 总结：可以利用Spring一句代码都不写的去创建动态代理 实现简单，没有强制要求目标对象必须实现接口 " />
     <meta name="twitter:image" content="https://mike-just.github.io/img/avatar.jpg" />
   
 
@@ -213,16 +213,30 @@ HelloWord;（通过各种方式给容器中注册对象(注册会员)） 以前�
     
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Blog1</h1>
+      <h1 class="post-title">AOP简单描述</h1>
       <p class="entry-meta"><span class="entry-time">Jul 12, 2020</span> 1 min read</p>
     </header>
     
 
-    <article class="post-content"><p>Spring&mdash;-AOP(面向切面编程)&mdash;声明式事务&mdash;-Spring-JDBCTemplate Spring&mdash;-IOC(容器)&mdash;&ndash;整合mybais等框架的</p>
-<p>IOC：(Inversion(反转) of . Control) ：控制反转 控制资源的获取方式: 主动式：(要什么资源都自己创建即可) BookServlet{ BookServlet bs=new BookServlet(); AirPlane ap=new AirPlane();//复杂对象的创建是比较困难的 } 被动式：(资源的获取不是我们创建，交给容器来创建) BookServlet{ BookService bs; public void test01(){ bs.checkout(); } } 容器：管理所有的组件(有功能的类)；假设，BookServlet受容器管理，BookService也受容器管理，容器可以自动的探查出哪些组件(类) 需要用到另一些组件(类)；容器帮我们创建BookService对象，并把BookService赋值进去</p>
-<p>DI：(Dependency Injection)依赖注入 容器能知道哪个组件(类)运行的时候，需要另外一个类(组件)，容器通过反射的形式，将容器中准备好的BookService对象注入(利用反射 给属性赋值)到BookServlet中；</p>
-<p>只要是容器管理的组件，都能使用容器提供的强大功能</p>
-<p>HelloWord;（通过各种方式给容器中注册对象(注册会员)） 以前是自己new对象，现在所有的对象交给容器创建;给容器中注册组件</p>
+    <article class="post-content"><p>面向切面编程：基于OOP基础之上新的编程思想
+指在程序运行期间，将某段代码动态切入到指定方法的指定位置进行运行的这种编程方式，面向切面编程</p>
+<p>场景：计算器运行计算方法的时候进行日志记录
+加日志记录：
+1.直接编写在方法内部；不推荐，修改维护麻烦
+日志记录：系统的辅助功能
+业务逻辑：（核心功能）
+耦合；</p>
+<p>2.我们希望的是
+业务逻辑:（核心功能）；日志模块；在核心功能运行期间，自己动态的加上
+运行的时候，日志功能可以加上
+可以使用动态代理来将日志代码动态的在目标方法执行前后先进行执行;</p>
+<p>动态代理：
+1.写起来难
+2.jdk默认的动态代理，如果目标对象没有实现任何接口，是无法为它创建代理对象的
+总结：
+将某段代码（日志）动态切入（不把日志代码写死在业务逻辑方法中）到指定方法（加减乘除）的指定位置（方法的开始，结束，异常）进行运行的这种编程方式</p>
+<h2 id="总结可以利用spring一句代码都不写的去创建动态代理--实现简单没有强制要求目标对象必须实现接口">Spring动态代理：Spring实现AOP功能，底层就是动态代理
+总结：可以利用Spring一句代码都不写的去创建动态代理  实现简单，没有强制要求目标对象必须实现接口</h2>
 </article>
     <footer class="post-footer">
       
@@ -230,7 +244,7 @@ HelloWord;（通过各种方式给容器中注册对象(注册会员)） 以前�
         <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fmike-just.github.io%2fpost%2fblog1%2f" title="Share on Facebook">
           <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
         </a>
-        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Blog1&amp;url=https%3a%2f%2fmike-just.github.io%2fpost%2fblog1%2f" title="Share on Twitter">
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=AOP%e7%ae%80%e5%8d%95%e6%8f%8f%e8%bf%b0&amp;url=https%3a%2f%2fmike-just.github.io%2fpost%2fblog1%2f" title="Share on Twitter">
           <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
         </a>
       </div>

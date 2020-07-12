@@ -12,7 +12,7 @@
     
 
     
-    <title>Blog</title>
+    <title>@Autowired注解</title>
 
     
     
@@ -22,22 +22,30 @@
   
   
   <meta name="author" content="" />
-  <meta name="description" content="@@Autowired注解：
-先按照类型去容器中找到对应的组件 @Autowired private BookDao bookDao;
- 找到就直接赋值 没找到就报错 先按照类型来找。。。。 找到多个类型一样的呢？按照变量名(bookDao)作为id继续匹配 那如果变量名有一样的呢？报错。可以使用@Qualifier(&amp;quot;haha&amp;quot;)指定一个字符串作为新的id 那如果@Qualifier也找不到呢？@Autowired(required=false)表示找不到就自动装配null  如果@Autowired作用在方法上呢？ @Controller public class BookServlet { //1.这个方法也会在bean创建的时候自动运行 //2.这个方法的每一个参数都会自动注入值 @Autowired public void haha(BookDao dao,BookService bookService){ System.out.println(&amp;ldquo;Spring运行了这个方法。。。&amp;ldquo;&#43;dao&#43;bookService); }
-总结：@Autowired 、@Resource、@Inject;都是自动装配的意思 @Autowired :最强大：Spring的注解 @Resource：默认byname java的标准
-@Resource的扩展性强，如果我们切换成另外一个容器框架，@Resource还是可以使用的，@Autowired就不行了 ">
+  <meta name="description" content="作用： 先按照类型去容器中找到对应的组件
+@Autowired private BookDao bookDao; 找到就直接赋值
+没找到就报错
+具体流程： 先按照类型来找。。。。
+找到多个类型一样的呢？按照变量名(bookDao)作为id继续匹配
+那如果变量名有一样的呢？报错。可以使用@Qualifier(&amp;ldquo;haha&amp;rdquo;)指定一个字符串作为新的id
+那如果@Qualifier也找不到呢？@Autowired(required=false)表示自动装配null
+如果@Autowired作用在方法上呢？
+@Controller public class BookServlet { //1.这个方法也会在bean创建的时候自动运行 //2.这个方法的每一个参数都会自动注入值 } @Autowired public void haha(BookDao dao,BookService bookService){ System.out.println(&amp;#34;Spring运行了这个方法。。。&amp;#34;&#43;dao&#43;bookService); } 总结： @Autowired 、@Resource、@Inject;都是自动装配的意思 @Autowired :最强大： Spring的注解 @Resource：默认byname java的标准 @Resource的扩展性强，如果我们切换成另外一个容器框架，@Resource还是可以使用的，@Autowired就不行了 ">
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="Blog" />
-    <meta name="twitter:description" content="@@Autowired注解：
-先按照类型去容器中找到对应的组件 @Autowired private BookDao bookDao;
- 找到就直接赋值 没找到就报错 先按照类型来找。。。。 找到多个类型一样的呢？按照变量名(bookDao)作为id继续匹配 那如果变量名有一样的呢？报错。可以使用@Qualifier(&amp;quot;haha&amp;quot;)指定一个字符串作为新的id 那如果@Qualifier也找不到呢？@Autowired(required=false)表示找不到就自动装配null  如果@Autowired作用在方法上呢？ @Controller public class BookServlet { //1.这个方法也会在bean创建的时候自动运行 //2.这个方法的每一个参数都会自动注入值 @Autowired public void haha(BookDao dao,BookService bookService){ System.out.println(&amp;ldquo;Spring运行了这个方法。。。&amp;ldquo;&#43;dao&#43;bookService); }
-总结：@Autowired 、@Resource、@Inject;都是自动装配的意思 @Autowired :最强大：Spring的注解 @Resource：默认byname java的标准
-@Resource的扩展性强，如果我们切换成另外一个容器框架，@Resource还是可以使用的，@Autowired就不行了 " />
+    <meta name="twitter:title" content="@Autowired注解" />
+    <meta name="twitter:description" content="作用： 先按照类型去容器中找到对应的组件
+@Autowired private BookDao bookDao; 找到就直接赋值
+没找到就报错
+具体流程： 先按照类型来找。。。。
+找到多个类型一样的呢？按照变量名(bookDao)作为id继续匹配
+那如果变量名有一样的呢？报错。可以使用@Qualifier(&amp;ldquo;haha&amp;rdquo;)指定一个字符串作为新的id
+那如果@Qualifier也找不到呢？@Autowired(required=false)表示自动装配null
+如果@Autowired作用在方法上呢？
+@Controller public class BookServlet { //1.这个方法也会在bean创建的时候自动运行 //2.这个方法的每一个参数都会自动注入值 } @Autowired public void haha(BookDao dao,BookService bookService){ System.out.println(&amp;#34;Spring运行了这个方法。。。&amp;#34;&#43;dao&#43;bookService); } 总结： @Autowired 、@Resource、@Inject;都是自动装配的意思 @Autowired :最强大： Spring的注解 @Resource：默认byname java的标准 @Resource的扩展性强，如果我们切换成另外一个容器框架，@Resource还是可以使用的，@Autowired就不行了 " />
     <meta name="twitter:image" content="https://mike-just.github.io/img/avatar.jpg" />
   
 
@@ -213,34 +221,37 @@
     
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Blog</h1>
+      <h1 class="post-title">@Autowired注解</h1>
       <p class="entry-meta"><span class="entry-time">Jul 12, 2020</span> 1 min read</p>
     </header>
     
 
-    <article class="post-content"><p>@@Autowired注解：</p>
-<p>先按照类型去容器中找到对应的组件
-@Autowired
-private BookDao bookDao;</p>
-<pre><code>     找到就直接赋值
-     没找到就报错
-     先按照类型来找。。。。
-     找到多个类型一样的呢？按照变量名(bookDao)作为id继续匹配
-     那如果变量名有一样的呢？报错。可以使用@Qualifier(&quot;haha&quot;)指定一个字符串作为新的id
-     那如果@Qualifier也找不到呢？@Autowired(required=false)表示找不到就自动装配null
-</code></pre>
-<p>如果@Autowired作用在方法上呢？
-@Controller
-public class BookServlet {
-//1.这个方法也会在bean创建的时候自动运行
-//2.这个方法的每一个参数都会自动注入值
-@Autowired
-public  void haha(BookDao dao,BookService bookService){
-System.out.println(&ldquo;Spring运行了这个方法。。。&ldquo;+dao+bookService);
-}</p>
-<p>总结：@Autowired  、@Resource、@Inject;都是自动装配的意思
-@Autowired :最强大：Spring的注解
-@Resource：默认byname  java的标准</p>
+    <article class="post-content"><p><img src="https://static.oschina.net/uploads/user/1808/3617290_100.jpeg?t=1523231638000" alt="我的图片" title="我的开源中国博客logo"></p>
+<h1 id="作用">作用：</h1>
+<p>先按照类型去容器中找到对应的组件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Autowired</span>
+<span style="color:#66d9ef">private</span> BookDao bookDao<span style="color:#f92672">;</span>
+</code></pre></div><p>找到就直接赋值</p>
+<p>没找到就报错</p>
+<p>具体流程：
+先按照类型来找。。。。</p>
+<p>找到多个类型一样的呢？按照变量名(bookDao)作为id继续匹配</p>
+<p>那如果变量名有一样的呢？报错。可以使用@Qualifier(&ldquo;haha&rdquo;)指定一个字符串作为新的id</p>
+<p>那如果@Qualifier也找不到呢？@Autowired(required=false)表示自动装配null</p>
+<p>如果@Autowired作用在方法上呢？</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Controller</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BookServlet</span> <span style="color:#f92672">{</span>
+<span style="color:#75715e">//1.这个方法也会在bean创建的时候自动运行
+</span><span style="color:#75715e">//2.这个方法的每一个参数都会自动注入值
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Autowired</span>
+<span style="color:#66d9ef">public</span>  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">haha</span><span style="color:#f92672">(</span>BookDao dao<span style="color:#f92672">,</span>BookService bookService<span style="color:#f92672">){</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Spring运行了这个方法。。。&#34;</span><span style="color:#f92672">+</span>dao<span style="color:#f92672">+</span>bookService<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="总结">总结：</h2>
+<h2 id="autowired--resourceinject都是自动装配的意思">@Autowired  、@Resource、@Inject;都是自动装配的意思</h2>
+<h2 id="autowired-最强大---spring的注解">@Autowired :最强大：   Spring的注解</h2>
+<h2 id="resource默认byname--java的标准">@Resource：默认byname  java的标准</h2>
 <h2 id="resource的扩展性强如果我们切换成另外一个容器框架resource还是可以使用的autowired就不行了">@Resource的扩展性强，如果我们切换成另外一个容器框架，@Resource还是可以使用的，@Autowired就不行了</h2>
 </article>
     <footer class="post-footer">
@@ -249,7 +260,7 @@ System.out.println(&ldquo;Spring运行了这个方法。。。&ldquo;+dao+bookSe
         <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fmike-just.github.io%2fpost%2fblog%2f" title="Share on Facebook">
           <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
         </a>
-        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Blog&amp;url=https%3a%2f%2fmike-just.github.io%2fpost%2fblog%2f" title="Share on Twitter">
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%40Autowired%e6%b3%a8%e8%a7%a3&amp;url=https%3a%2f%2fmike-just.github.io%2fpost%2fblog%2f" title="Share on Twitter">
           <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
         </a>
       </div>
